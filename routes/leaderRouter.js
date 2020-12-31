@@ -6,7 +6,7 @@ const Leaders = require('../models/leaders');
 
 const leaderRouter = express.Router();
 leaderRouter.use(bodyParser.json());
-lederRouter.route('/')
+leaderRouter.route('/')
 .get((req,res,next)=>{
     Leaders.find({})
     .then((leader)=>{
@@ -41,7 +41,7 @@ lederRouter.route('/')
 });
 leaderRouter.route('/:leaderId')
 .get((req,res,next)=>{
-   Leader.findById(req.params.leaderId)
+   Leaders.findById(req.params.leaderId)
    .then((leader)=>{
     console.log('Leader created ',leader);
     res.statusCode = 200;
